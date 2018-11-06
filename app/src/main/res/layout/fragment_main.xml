@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/decrement_month"
+        android:layout_width="30dp"
+        android:layout_height="0dp"
+        android:background="@drawable/arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/month_list"
+        app:layout_constraintEnd_toStartOf="@+id/month_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/month_list" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/month_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toStartOf="@+id/increment_month"
+        app:layout_constraintStart_toEndOf="@+id/decrement_month"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/month_item" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/increment_month"
+        android:layout_width="30dp"
+        android:layout_height="0dp"
+        android:background="@drawable/arrow"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="@+id/month_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/month_list"
+        app:layout_constraintTop_toTopOf="@+id/month_list" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/month_list"
+        app:layout_constraintEnd_toEndOf="@+id/month_list"
+        app:layout_constraintStart_toStartOf="@+id/month_list"
+        app:layout_constraintTop_toTopOf="@+id/month_list"
+        app:srcCompat="@drawable/gradient_overlay" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
