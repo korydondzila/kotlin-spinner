@@ -13,17 +13,16 @@ class MainViewModel : ViewModel() {
         _selectedMonth.value = date
     }
 
-    private fun _months() : List<LocalDate> {
-        val now = LocalDate.now().withDayOfMonth(1)
+    val months: List<LocalDate>
+        get() {
+            val now = LocalDate.now().withDayOfMonth(1)
 
-        val muteMonths = mutableListOf<LocalDate>()
-        muteMonths.add(LocalDate.ofEpochDay(0))
-        muteMonths.addAll((1..12).map { index ->
-            now.minusMonths(now.monthValue - index.toLong())
-        })
-        muteMonths.add(LocalDate.ofEpochDay(0))
-        return muteMonths
-    }
-
-    val months = _months()
+            val muteMonths = mutableListOf<LocalDate>()
+            muteMonths.add(LocalDate.ofEpochDay(0))
+            muteMonths.addAll((1..12).map { index ->
+                now.minusMonths(now.monthValue - index.toLong())
+            })
+            muteMonths.add(LocalDate.ofEpochDay(0))
+            return muteMonths
+        }
 }

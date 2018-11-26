@@ -23,7 +23,7 @@ class MainAdapter(private val items : List<LocalDate>, private val context: Cont
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if (position in 1..(itemCount - 2)) {
+        if (position in 1 until (itemCount - 1)) {
             val month = items[position].month.getDisplayName(TextStyle.FULL, Locale.US)
             holder.monthLabel.text = month
             holder.monthLabel.contentDescription = month

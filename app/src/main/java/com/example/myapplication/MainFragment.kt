@@ -103,9 +103,8 @@ class MainFragment : Fragment() {
         var width = month_list.width
 
         if (width > 0) {
-            context?.resources?.getDimensionPixelSize(R.dimen.month_item_width)?.let { monthWidth ->
-                layoutManager.scrollToPositionWithOffset(mainViewModel.months.indexOf(month), width / 2 - monthWidth / 2)
-            }
+            val monthWidth = month_item.width
+            layoutManager.scrollToPositionWithOffset(mainViewModel.months.indexOf(month), width / 2 - monthWidth / 2)
         } else {
             val vto = month_list.viewTreeObserver
             vto.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
