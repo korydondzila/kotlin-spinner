@@ -1,5 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="number_ball_size">32dp</dimen>
-    <dimen name="max_control_width">0dp</dimen>
+    <dimen name="month_item_width">150dp</dimen>
 </resources>
